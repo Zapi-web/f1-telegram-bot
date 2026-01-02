@@ -1,0 +1,9 @@
+main.exe
+main
+f1-bot.exe
+f1-bot
+
+.vscode/
+.idea/
+
+.env
