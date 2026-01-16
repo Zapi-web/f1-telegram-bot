@@ -2,7 +2,7 @@ package racing
 
 var (
 	Countries = map[string]string{
-		"BHR": "🇧🇭",
+		"BRN": "🇧🇭",
 		"AUS": "🇦🇺",
 		"CHN": "🇨🇳",
 		"JPN": "🇯🇵",

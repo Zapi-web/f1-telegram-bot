@@ -11,14 +11,14 @@ import (
 type Race struct {
 	CountryName      string `json:"country_name"`
 	DateStart        string `json:"date_start"`
-	MeetingCode      string `json:"meeting_code"`
+	CountryCode      string `json:"country_code"`
 	CircuitShortName string `json:"circuit_short_name"`
 }
 
 func GetNewRace() (Race, int, error) {
 	var nextRace Race
-	url := "https://api.openf1.org/v1/meetings?year=2025"
-	dateTodayExample := time.Date(2025, time.July, 19, 0, 0, 0, 0, time.Local)
+	url := "https://api.openf1.org/v1/meetings?year=2026"
+	dateTodayExample := time.Now()
 
 	ans, err := http.Get(url)
 

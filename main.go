@@ -8,10 +8,17 @@ import (
 
 	"f1-bot/racing"
 
+	"github.com/joho/godotenv"
 	tele "gopkg.in/telebot.v4"
 )
 
 func main() {
+	err := godotenv.Load()
+
+	if err != nil {
+		log.Fatal("Ошибка загрузки .env файла")
+	}
+
 	token := os.Getenv("TOKEN")
 	if token == "" {
 		log.Fatal("Ошибка: Токен не задан")
@@ -60,7 +67,7 @@ func main() {
 			return c.Send("⚠️ Ошибка: " + err.Error())
 		}
 
-		countryEmoji, ok := racing.Countries[race.MeetingCode]
+		countryEmoji, ok := racing.Countries[race.CountryCode]
 
 		if !ok {
 			countryEmoji = "🏳️"
