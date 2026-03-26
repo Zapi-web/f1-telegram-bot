@@ -13,11 +13,7 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
-
-	if err != nil {
-		log.Fatal("Ошибка загрузки .env файла")
-	}
+	_ = godotenv.Load()
 
 	token := os.Getenv("TOKEN")
 	if token == "" {
