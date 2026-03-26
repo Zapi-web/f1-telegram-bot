@@ -17,6 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Prepare Image Name
+        run: |
+          IMAGE_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "IMAGE_TAG=ghcr.io/${IMAGE_NAME}:latest" >> $GITHUB_ENV
+
       - name: Login to Github Packages
         uses: docker/login-action@v3
         with:
